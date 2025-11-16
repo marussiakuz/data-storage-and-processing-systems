@@ -17,7 +17,9 @@ CREATE TABLE IF NOT EXISTS transaction (
     order_status VARCHAR NOT NULL CHECK (order_status IN 
     ('Approved', 'Cancelled')
     ),
-    transaction_date DATE NOT NULL
+    transaction_date DATE NOT NULL,
+    list_price FLOAT NOT NULL,
+    standard_cost FLOAT
 );
 
 CREATE TABLE IF NOT EXISTS customer (
@@ -46,9 +48,7 @@ CREATE TABLE IF NOT EXISTS product (
     ),
     product_size VARCHAR CHECK (product_size IN 
     ('small', 'medium', 'large')
-    ),
-    list_price FLOAT NOT NULL,
-    standard_cost FLOAT
+    )
 );
 
 CREATE SEQUENCE IF NOT EXISTS job_id_seq;
