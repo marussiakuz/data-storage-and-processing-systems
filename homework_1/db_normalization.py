@@ -160,7 +160,7 @@ data_to_insert = {'job', 'postal_object', 'product'}
 
 for table_name in data_to_insert:
     data = pd.read_csv(
-        Path(f'data_to_insert/{table_name}.csv'),
+        Path(f'homework_1/data_to_insert/{table_name}.csv'),
         keep_default_na=False
     )
     insert_data(data, table_name)
